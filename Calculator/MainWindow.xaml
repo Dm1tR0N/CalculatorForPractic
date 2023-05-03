@@ -1,0 +1,58 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Калькулятор" Height="475" Width="520">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <TextBlock Margin="10,0,0,0" FontSize="24" Text="Калькулятор" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="SpaceNums" Margin="10,0,0,0" FontSize="24" Height="40" MinWidth="330" HorizontalAlignment="Stretch" IsReadOnly="True"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Grid ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MaxWidth="100"></ColumnDefinition>
+                        <ColumnDefinition MaxWidth="100"></ColumnDefinition>
+                        <ColumnDefinition MaxWidth="100"></ColumnDefinition>
+                        <ColumnDefinition MaxWidth="100"></ColumnDefinition>
+                        <ColumnDefinition MaxWidth="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="100"></RowDefinition>
+                        <RowDefinition MaxHeight="100"></RowDefinition>
+                        <RowDefinition MaxHeight="100"></RowDefinition>
+                        <RowDefinition MaxHeight="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="7" Grid.Column="0" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_7" x:Name="num7"></Button>
+                    <Button Content="8" Grid.Column="1" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_8" x:Name="num8"></Button>
+                    <Button Content="9" Grid.Column="2" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_9" x:Name="num9"></Button>
+                    <Button Content="√" Grid.Column="3" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Sqt" x:Name="numSqt"></Button>
+                    <Button Content="%" Grid.Column="4" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Proc" x:Name="numProc"></Button>
+
+                    <Button Content="4" Grid.Column="0" Grid.Row="1" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_4" x:Name="num4"></Button>
+                    <Button Content="5" Grid.Column="1" Grid.Row="1" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_5" x:Name="num5"></Button>
+                    <Button Content="6" Grid.Column="2" Grid.Row="1" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_6" x:Name="num6"></Button>
+                    <Button Content="*" Grid.Column="3" Grid.Row="1" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_X" x:Name="numX"></Button>
+                    <Button Content="/" Grid.Column="4" Grid.Row="1" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Del" x:Name="numDel"></Button>
+
+                    <Button Content="1" Grid.Column="0" Grid.Row="2" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_0" x:Name="num0"></Button>
+                    <Button Content="2" Grid.Column="1" Grid.Row="2" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_2" x:Name="num2"></Button>
+                    <Button Content="3" Grid.Column="2" Grid.Row="2" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_3" x:Name="num3"></Button>
+                    <Button Content="-" Grid.Column="3" Grid.Row="2" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Min" x:Name="numMin"></Button>
+
+                    <Button Content="C" Grid.Column="0" Grid.Row="3" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_C" x:Name="numC"></Button>
+                    <Button Content="0" Grid.Column="1" Grid.Row="3" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_0q" x:Name="num0q"></Button>
+                    <Button Content="." Grid.Column="2" Grid.Row="3" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Point" x:Name="numPoint"></Button>
+                    <Button Content="+" Grid.Column="3" Grid.Row="3" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Plus" x:Name="numPlus"></Button>
+                    <Button Content="=" Grid.Column="4" Grid.Row="2" Grid.RowSpan="3" Height="180" Width="80" Margin="10" FontSize="40" Click="click_num_Equals" x:Name="numEquals"></Button>
+
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
