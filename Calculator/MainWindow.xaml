@@ -13,7 +13,7 @@
                 <TextBox x:Name="SpaceNums" Margin="10,0,0,0" FontSize="24" Height="40" MinWidth="330" HorizontalAlignment="Stretch" IsReadOnly="True"></TextBox>
             </StackPanel>
             <StackPanel>
-                <Grid ShowGridLines="True">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition MaxWidth="100"></ColumnDefinition>
                         <ColumnDefinition MaxWidth="100"></ColumnDefinition>
