@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Калькулятор" Height="475" Width="520">
+        Title="Калькулятор" Height="475" Width="520" MinHeight="475" MinWidth="520" MaxHeight="475" MaxWidth="520">
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
@@ -31,7 +31,7 @@
                     <Button Content="7" Grid.Column="0" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_7" x:Name="num7"></Button>
                     <Button Content="8" Grid.Column="1" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_8" x:Name="num8"></Button>
                     <Button Content="9" Grid.Column="2" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_9" x:Name="num9"></Button>
-                    <Button Content="√" Grid.Column="3" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Sqt" x:Name="numSqt"></Button>
+                    <Button Content="^" Grid.Column="3" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Sqt" x:Name="numSqt"></Button>
                     <Button Content="%" Grid.Column="4" Grid.Row="0" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_Proc" x:Name="numProc"></Button>
 
                     <Button Content="4" Grid.Column="0" Grid.Row="1" Height="80" Width="80" Margin="10" FontSize="40" Click="click_num_4" x:Name="num4"></Button>

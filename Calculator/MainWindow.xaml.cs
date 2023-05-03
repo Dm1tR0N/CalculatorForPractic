@@ -31,7 +31,7 @@ namespace Calculator
             try
             {
                 // создаем массив всех допустимых операторов
-                char[] operators = new char[] { '+', '-', '*', '/', '%', '√' };
+                char[] operators = new char[] { '+', '-', '*', '/', '%', '^' };
 
                 // ищем первый оператор в строке
                 int opIndex = input.IndexOfAny(operators);
@@ -61,7 +61,7 @@ namespace Calculator
                     case '*': return left * right;
                     case '/': return left / right;
                     case '%': return left % right;
-                    case '√': return Math.Pow(left, right);
+                    case '^': return Math.Pow(left, right);
                     default: throw new ArgumentException("Неизвестный оператор: " + op);
                 }
             }
