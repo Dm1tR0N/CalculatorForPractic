@@ -30,48 +30,65 @@ namespace Calculator
         {
             try
             {
-                // создаем массив всех допустимых операторов
                 char[] operators = new char[] { '+', '-', '*', '/', '%', '^' };
+                int opIndex = FindFirstOperator(input);
 
-                // ищем первый оператор в строке
-                int opIndex = input.IndexOfAny(operators);
-
-                // если не найден оператор, строка содержит единственное число
                 if (opIndex == -1)
                 {
-                    return double.Parse(input);
+                    return ParseOperand(input);
                 }
 
-                // отделяем символы операции от чисел
                 string leftString = input.Substring(0, opIndex);
                 string rightString = input.Substring(opIndex + 1);
 
-                // рекурсивно вычисляем значения каждой отдельной операции
                 double left = Calculate(leftString);
                 double right = Calculate(rightString);
 
-                // берем символ операции
                 char op = input[opIndex];
 
-                // выполняем операцию и возвращаем результат
-                switch (op)
-                {
-                    case '+': return left + right;
-                    case '-': return left - right;
-                    case '*': return left * right;
-                    case '/': return left / right;
-                    case '%': return left % right;
-                    case '^': return Math.Pow(left, right);
-                    default: throw new ArgumentException("Неизвестный оператор: " + op);
-                }
+                return PerformOperation(left, right, op);
             }
             catch (Exception)
             {
-
                 throw new ArgumentException("Непредвиденная ошибка!");
             }
         }
 
+        private int FindFirstOperator(string input)
+        {
+            char[] operators = new char[] { '+', '-', '*', '/', '%', '^' };
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                char c = input[i];
+
+                if (operators.Contains(c))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        private double ParseOperand(string input)
+        {
+            return double.Parse(input);
+        }
+
+        private double PerformOperation(double left, double right, char op)
+        {
+            switch (op)
+            {
+                case '+': return left + right;
+                case '-': return left - right;
+                case '*': return left * right;
+                case '/': return left / right;
+                case '%': return left % right;
+                case '^': return Math.Pow(left, right);
+                default: throw new ArgumentException("Неизвестный оператор: " + op);
+            }
+        }
 
         private void click_num_7(object sender, RoutedEventArgs e)
         {
