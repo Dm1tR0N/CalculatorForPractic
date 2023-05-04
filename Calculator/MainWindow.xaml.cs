@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Calculator.Functions;
 
 namespace Calculator
 {
@@ -24,70 +25,6 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public double Calculate(string input)
-        {
-            try
-            {
-                char[] operators = new char[] { '+', '-', '*', '/', '%', '^' };
-                int opIndex = FindFirstOperator(input);
-
-                if (opIndex == -1)
-                {
-                    return ParseOperand(input);
-                }
-
-                string leftString = input.Substring(0, opIndex);
-                string rightString = input.Substring(opIndex + 1);
-
-                double left = Calculate(leftString);
-                double right = Calculate(rightString);
-
-                char op = input[opIndex];
-
-                return PerformOperation(left, right, op);
-            }
-            catch (Exception)
-            {
-                throw new ArgumentException("Непредвиденная ошибка!");
-            }
-        }
-
-        private int FindFirstOperator(string input)
-        {
-            char[] operators = new char[] { '+', '-', '*', '/', '%', '^' };
-
-            for (int i = 0; i < input.Length; i++)
-            {
-                char c = input[i];
-
-                if (operators.Contains(c))
-                {
-                    return i;
-                }
-            }
-
-            return -1;
-        }
-
-        private double ParseOperand(string input)
-        {
-            return double.Parse(input);
-        }
-
-        private double PerformOperation(double left, double right, char op)
-        {
-            switch (op)
-            {
-                case '+': return left + right;
-                case '-': return left - right;
-                case '*': return left * right;
-                case '/': return left / right;
-                case '%': return left % right;
-                case '^': return Math.Pow(left, right);
-                default: throw new ArgumentException("Неизвестный оператор: " + op);
-            }
         }
 
         private void click_num_7(object sender, RoutedEventArgs e)
@@ -198,7 +135,7 @@ namespace Calculator
         {
             try
             {
-                double result = Calculate(SpaceNums.Text);
+                double result = CalculateFunc.Calculate(SpaceNums.Text);
                 SpaceNums.Text = Convert.ToString(result);
             }
             catch (Exception ex)
