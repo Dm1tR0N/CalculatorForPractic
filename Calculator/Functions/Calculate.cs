@@ -12,7 +12,7 @@ namespace Calculator.Functions
         {
             try
             {
-                // Другая строка конфликта
+                // Строка конфликта
                 char[] operators = new char[] { '+', '-', '*', '/', '%', '^' };
                 int opIndex = FindFirstOperatorFunc.FindFirstOperator(input);
 
